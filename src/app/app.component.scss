@@ -1,0 +1,9 @@
+@import '../styles.scss';
+
+.app-border {
+  border: 8px solid $primary;
+}
+
+.card-list, .card-details {
+    width: 49%;
+}

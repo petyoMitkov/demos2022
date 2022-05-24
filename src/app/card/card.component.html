@@ -1,0 +1,9 @@
+<div
+  class="card"
+  [class.selected]="data?.id === selectedCardId"
+  (click)="select.emit(data)"
+>
+  <div class="card-body">
+    <h5 class="card-title">{{ data?.title }}</h5>
+  </div>
+</div>

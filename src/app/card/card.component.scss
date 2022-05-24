@@ -1,0 +1,16 @@
+@import '../../styles.scss';
+
+.card {
+  transition: all 0.3s;
+}
+
+.card:hover {
+  background-color: $secondary;
+  cursor: pointer;
+}
+
+.card.selected {
+  background-color: $primary;
+  color: $white;
+  transform: scale(0.95);
+}

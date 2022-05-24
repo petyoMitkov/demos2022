@@ -1,3 +1,30 @@
-<h1>Demo App</h1>
+<div class="w-100 p-2">
+  <div class="d-flex justify-content-between">
+    <h1>title</h1>
+    <input type="text" class="form-control w-25" [(ngModel)]="title" />
+  </div>
 
-<router-outlet></router-outlet>
+  <p>Selectd card JSON: selectedCard</p>
+
+  <div class="d-flex justify-content-around">
+    <!-- Card list -->
+    <div class="card-list app-border p-2">
+      <app-card *ngFor="let card of cardLinst" class="d-block mb-2"></app-card>
+    </div>
+
+    <!-- Card details -->
+    <div class="card-details app-border p-2">
+      <app-card-details></app-card-details>
+    </div>
+  </div>
+</div>
+
+<pre>
+    TODO: 
+    - disply the title
+    - set and display selectedCard
+    - display the data in the list
+    - dislay the info in the details (title in uppercase)
+    - mark the selected card in the list
+    - display the full country name (use country pipe)
+</pre>
