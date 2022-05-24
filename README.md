@@ -6,4 +6,6 @@ This is a repo for demo purposes. The demos are separate in the different branch
 [Open in StackBlitz](https://stackblitz.com/github/petyoMitkov/demos2022/tree/data-binding-and-pipes)
 
 - Angular forms
+[Open in StackBlitz](https://stackblitz.com/github/petyoMitkov/demos2022/tree/forms)
+
 - Nx Monorepo
