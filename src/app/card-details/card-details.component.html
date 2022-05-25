@@ -1,11 +1,11 @@
 <div *ngIf="data; else noData">
   <h1>{{ data.title }}</h1>
 
-  <img [src]="data.imageUrl" height="220px" alt="image" />
+  <img [src]="data.imageUrl" width="60%" alt="image" />
 
   <p>{{ data.country }}</p>
 </div>
 
 <ng-template #noData>
-  <p>No data the details!</p>
+  <p>No data in the details!</p>
 </ng-template>

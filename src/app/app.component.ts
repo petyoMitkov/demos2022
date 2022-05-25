@@ -7,7 +7,7 @@ const MOCK_DATA = [
     id: '1',
     title: 'Rex',
     imageUrl:
-      'https://cdn.pixabay.com/photo/2017/05/05/11/48/dog-2286773_960_720.jpg',
+      'https://cdn.pixabay.com/photo/2018/07/10/14/01/dog-3528760_960_720.jpg',
     country: CountyCodeEnum.BG,
   },
   {
@@ -39,7 +39,7 @@ export class AppComponent {
   cardList: Card[] = MOCK_DATA;
   selectedCard: Card;
 
-  onCardSelect(card: Card) {
+  onSelect(card: Card) {
     this.selectedCard = card;
   }
 }
