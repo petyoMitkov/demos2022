@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { CountyCodeEnum } from '../types';
 
-const enum CountryFullNameEmun {
+const enum CountryFullNameEnum {
   BG = 'Bulgaria',
   DE = 'Germany',
   SP = 'Spain',
@@ -12,11 +12,11 @@ export class CountyPipe implements PipeTransform {
   transform(value: CountyCodeEnum): string {
     switch (value) {
       case CountyCodeEnum.BG:
-        return CountryFullNameEmun.BG;
+        return CountryFullNameEnum.BG;
       case CountyCodeEnum.DE:
-        return CountryFullNameEmun.DE;
+        return CountryFullNameEnum.DE;
       case CountyCodeEnum.SP:
-        return CountryFullNameEmun.SP;
+        return CountryFullNameEnum.SP;
       default:
         return value;
     }

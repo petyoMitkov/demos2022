@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Observable, of } from 'rxjs';
 import { Card, CountyCodeEnum } from './types';
 
 const MOCK_DATA = [
@@ -31,8 +32,11 @@ const MOCK_DATA = [
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'angular-demo-app';
-  cardLinst: Card[] = MOCK_DATA;
+  title = 'Angular demo app';
+  
+  description$: Observable<string> = of('Data binding and pipes demo.');
+
+  cardList: Card[] = MOCK_DATA;
   selectedCard: Card;
 
   onCardSelect(card: Card) {
