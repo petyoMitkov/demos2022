@@ -1,28 +1,34 @@
 <div class="w-100 p-2">
   <div class="d-flex justify-content-between">
-    <h1>** title **</h1>
+    <h1>{{ title }}</h1>
     <input type="text" class="form-control w-25" [(ngModel)]="title" />
   </div>
 
-  <p>** show description$ **</p>
+  <p>{{ description$ | async }}</p>
 
-  <p>Selected card JSON: ** selectedCard **</p>
+  <p>Selected card JSON: {{ selectedCard | json }}</p>
 
   <div class="d-flex justify-content-around">
     <!-- Card list -->
     <div class="card-list app-border p-2">
-      <app-card *ngFor="let card of cardList" class="d-block mb-2"></app-card>
+      <app-card
+        *ngFor="let card of cardList"
+        class="d-block mb-2"
+        [data]="card"
+        [selectedCardId]="selectedCard.id"
+        (select)="onSelect($event)"
+      ></app-card>
     </div>
 
     <!-- Card details -->
     <div class="card-details app-border p-2">
-      <app-card-details></app-card-details>
+      <app-card-details [data]="selectedCard"></app-card-details>
     </div>
   </div>
 </div>
 
 <pre>
-    TODO: 
+    Done in the exercise
     - display the title
     - display the description$
     - display and set default selectedCard

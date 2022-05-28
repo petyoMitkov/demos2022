@@ -37,7 +37,7 @@ export class AppComponent {
   description$: Observable<string> = of('Data binding and pipes demo.');
 
   cardList: Card[] = MOCK_DATA;
-  selectedCard: Card;
+  selectedCard: Card = this.cardList[0];
 
   onSelect(card: Card) {
     this.selectedCard = card;
