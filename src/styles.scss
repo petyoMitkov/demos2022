@@ -1,7 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 $primary: #9100d9;
-$secondary:  #e7e7e7;
+$secondary: #e7e7e7;
 $white: white;
 
 /* Importing Bootstrap SCSS file. */
 @import "~bootstrap/scss/bootstrap";
+
+.btn:disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+  pointer-events: all !important;
+}
