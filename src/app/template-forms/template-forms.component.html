@@ -10,12 +10,13 @@
 
     <input
       type="text"
+      id="name"
       name="name"
       class="form-control mb-2"
       placeholder="Enter name"
       required
       minlength="4"
-      [(ngModel)]="user.name"
+      [(ngModel)]="userFrom.name"
       #name="ngModel"
     />
 

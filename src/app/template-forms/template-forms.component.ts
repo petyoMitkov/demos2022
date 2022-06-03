@@ -6,9 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./template-forms.component.scss'],
 })
 export class TemplateFormsComponent {
-  user = { name: '', age: '' };
+  userFrom = { name: '', age: '' };
 
   log() {
-    console.log(this.user);
+    console.log(this.userFrom);
   }
 }

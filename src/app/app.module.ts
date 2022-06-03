@@ -6,7 +6,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { TemplateFormsComponent } from './template-forms/template-forms.component';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -21,7 +21,13 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [AppComponent, TemplateFormsComponent, ReactiveFormsComponent],
-  imports: [BrowserModule, RouterModule.forRoot(routes), NgbModule, FormsModule],
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot(routes),
+    NgbModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

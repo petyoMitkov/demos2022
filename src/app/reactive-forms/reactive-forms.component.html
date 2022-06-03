@@ -1,2 +1,36 @@
 <h1 class="mb-4">Reactive forms</h1>
 <hr class="mb-5" />
+
+<form [formGroup]="userForm" class="border border-secondary rounded p-4 col-12 col-lg-8">
+  <h4 class="mb-4">User form example</h4>
+
+  <!-- Name  -->
+  <div class="form-group mb-4">
+    <label for="name" class="mb-2">Name</label>
+    <input
+      id="name"
+      type="text"
+      class="form-control mb-2"
+      placeholder="Enter name"
+      formControlName="name"
+    />
+
+    <div *ngIf="name?.invalid && (name?.dirty || name?.touched)" class="alert alert-danger">
+      <small *ngIf="name?.errors?.['required']">Name is required.</small>
+      <small *ngIf="name?.errors?.['minlength']"> Name must be at least 4 characters long. </small>
+    </div>
+  </div>
+
+  <pre>
+    TODO: 
+    - add input for user.age
+    - add validation for the age from 18 to 100
+    
+    - use forbiddenName custom validator ("Ivan" is forbidden)
+    - init the form with the FormBuilder
+  </pre>
+
+  <button type="button" class="btn btn-primary" [disabled]="userForm.invalid" (click)="log()">
+    Log form value
+  </button>
+</form>
