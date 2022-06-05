@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { TemplateFormsComponent } from './template-forms/template-forms.component';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ForbiddenNameDirective } from './template-forms/validators';
 
 const routes: Routes = [
   {
@@ -20,7 +21,12 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, TemplateFormsComponent, ReactiveFormsComponent],
+  declarations: [
+    AppComponent,
+    TemplateFormsComponent,
+    ReactiveFormsComponent,
+    ForbiddenNameDirective,
+  ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
