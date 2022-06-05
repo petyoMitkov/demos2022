@@ -8,6 +8,7 @@ import { TemplateFormsComponent } from './template-forms/template-forms.componen
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ForbiddenNameDirective } from './template-forms/validators';
+import { FromArrayComponent } from './form-array/form-array.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,10 @@ const routes: Routes = [
     path: 'reactive-forms',
     component: ReactiveFormsComponent,
   },
+  {
+    path: 'form-array',
+    component: FromArrayComponent,
+  },
 ];
 
 @NgModule({
@@ -26,6 +31,7 @@ const routes: Routes = [
     TemplateFormsComponent,
     ReactiveFormsComponent,
     ForbiddenNameDirective,
+    FromArrayComponent,
   ],
   imports: [
     BrowserModule,
