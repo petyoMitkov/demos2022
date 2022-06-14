@@ -23,6 +23,10 @@ const routes: Routes = [
     path: 'form-array',
     component: FromArrayComponent,
   },
+  {
+    path: '**',
+    redirectTo: 'template-forms',
+  },
 ];
 
 @NgModule({

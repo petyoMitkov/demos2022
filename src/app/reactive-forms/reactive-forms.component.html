@@ -17,18 +17,20 @@
 
     <div *ngIf="name?.invalid && (name?.dirty || name?.touched)" class="alert alert-danger">
       <small *ngIf="name?.errors?.['required']">Name is required.</small>
-      <small *ngIf="name?.errors?.['minlength']"> Name must be at least 4 characters long. </small>
+      <small *ngIf="name?.errors?.['minlength']">Name must be at least 4 characters long.</small>
     </div>
   </div>
 
   <pre>
-    TODO: 
-    - add input for user.age
+    TODO:
+    - add control and input for user.age
     - add validation for the age from 18 to 100
     - use forbiddenName custom validator ("Ivan" is forbidden)
+
     - init the form with the FormBuilder
     - add FormsGroup "user.address" with city and street controls
-    (use formGroupName to display the "address" controls)
+      (NOTE: to display a nested FormsGroup use "formGroupName")
+    - log the name control value with valueChanges
   </pre>
 
   <button type="button" class="btn btn-primary" [disabled]="userForm.invalid" (click)="log()">

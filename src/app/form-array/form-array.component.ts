@@ -11,9 +11,7 @@ export class FromArrayComponent {
   // https://github.com/angular/angular/issues/30264
 
   formGroup = this.fb.group({
-    members: this.fb.array([
-        this.fb.control('', [Validators.required]),
-    ]),
+    members: this.fb.array([this.fb.control('', [Validators.required])]),
   });
 
   get members(): FormArray {
@@ -28,6 +26,8 @@ export class FromArrayComponent {
 
   deleteMember(index: number) {
     this.members.removeAt(index);
+    this.members.updateValueAndValidity();
+    this.formGroup.updateValueAndValidity();
   }
 
   log() {
