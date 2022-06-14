@@ -9,6 +9,10 @@
 
 <form [formGroup]="formGroup" class="border border-secondary rounded p-4 col-12 col-lg-8">
   <div formArrayName="members">
+    <div *ngIf="members?.errors?.['required']" class="alert alert-danger">
+      <small>Error min 1 member in the list</small>
+    </div>
+    
     <!-- Display FormArray Controls-->
     <div *ngFor="let member of members.controls; let i = index" class="form-group mb-4">
       <label class="mb-2">Member {{ i + 1 }}</label>

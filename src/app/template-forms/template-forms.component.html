@@ -16,6 +16,7 @@
       placeholder="Enter name"
       required
       minlength="4"
+      appForbiddenName="Ivan"
       [(ngModel)]="userFrom.name"
       #name="ngModel"
     />
@@ -23,11 +24,36 @@
     <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
       <small *ngIf="name.errors?.['required']">Name is required.</small>
       <small *ngIf="name.errors?.['minlength']">Name must be at least 4 characters long.</small>
+      <small *ngIf="name.errors?.['forbiddenName']">Error forbiddenName</small>
+    </div>
+  </div>
+
+  <!-- Age  -->
+  <div class="form-group mb-4">
+    <label for="age" class="mb-2">Age</label>
+
+    <input
+      type="number"
+      id="age"
+      name="age"
+      class="form-control mb-2"
+      placeholder="Enter age"
+      required
+      min="18"
+      max="100"
+      [(ngModel)]="userFrom.age"
+      #age="ngModel"
+    />
+
+    <div *ngIf="age.invalid && (age.dirty || age.touched)" class="alert alert-danger">
+      <small *ngIf="age.errors?.['required']">Age is required.</small>
+      <small *ngIf="age.errors?.['min']">Error min 18</small>
+      <small *ngIf="age.errors?.['max']">Error max 100</small>
     </div>
   </div>
 
   <pre>
-    TODO: 
+    DONE: 
     - add input for user.age
     - add validation for the age from 18 to 100
     - use forbidden-name.directive ("Ivan" is forbidden)

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form-array',
@@ -11,7 +11,7 @@ export class FromArrayComponent {
   // https://github.com/angular/angular/issues/30264
 
   formGroup = this.fb.group({
-    members: this.fb.array([this.fb.control('', [Validators.required])]),
+    members: this.fb.array([this.fb.control('', [Validators.required])], [Validators.required]),
   });
 
   get members(): FormArray {

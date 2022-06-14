@@ -18,11 +18,54 @@
     <div *ngIf="name?.invalid && (name?.dirty || name?.touched)" class="alert alert-danger">
       <small *ngIf="name?.errors?.['required']">Name is required.</small>
       <small *ngIf="name?.errors?.['minlength']">Name must be at least 4 characters long.</small>
+      <small *ngIf="name?.errors?.['forbiddenName']">Error forbiddenName</small>
+    </div>
+  </div>
+
+  <!-- Age  -->
+  <div class="form-group mb-4">
+    <label for="age" class="mb-2">Age</label>
+    <input
+      id="age"
+      type="number"
+      class="form-control mb-2"
+      placeholder="Enter age"
+      formControlName="age"
+    />
+
+    <div *ngIf="age?.invalid && (age?.dirty || age?.touched)" class="alert alert-danger">
+      <small *ngIf="age?.errors?.['min']">Error min 18</small>
+      <small *ngIf="age?.errors?.['max']">Error max 100</small>
+    </div>
+  </div>
+
+  <!-- Address -->
+  <div formGroupName="address">
+    <div class="form-group mb-4">
+      <label for="city" class="mb-2">City</label>
+      <input
+        id="city"
+        type="text"
+        class="form-control mb-2"
+        placeholder="Enter city"
+        formControlName="city"
+      />
+    </div>
+
+    <div class="form-group mb-4">
+      <label for="street" class="mb-2">Street</label>
+      <input
+        id="street"
+        type="text"
+        class="form-control mb-2"
+        placeholder="Enter street"
+        formControlName="street"
+      />
     </div>
   </div>
 
   <pre>
-    TODO:
+    DONE:
     - add control and input for user.age
     - add validation for the age from 18 to 100
     - use forbiddenName custom validator ("Ivan" is forbidden)
