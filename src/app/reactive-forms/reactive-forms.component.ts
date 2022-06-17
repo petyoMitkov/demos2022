@@ -9,7 +9,7 @@ import { forbiddenName } from './validators';
   styleUrls: ['./reactive-forms.component.scss'],
 })
 export class ReactiveFormsComponent implements OnInit, OnDestroy {
-  userForm: FormGroup = this.initUserFormWithFormBuilder(); // this.initUserForm();
+  userForm: FormGroup = this.initUserFormWithFormBuilder();
   destroy$ = new Subject<void>();
 
   get name(): AbstractControl | null {
@@ -44,17 +44,13 @@ export class ReactiveFormsComponent implements OnInit, OnDestroy {
     });
   }
 
-  initUserFormWithFormBuilder() {
+  initUserFormWithFormBuilder(): FormGroup {
     return this.fb.group({
-      name: this.fb.control('', [
-        Validators.required,
-        Validators.minLength(4),
-        forbiddenName('Ivan'),
-      ]),
-      age: this.fb.control('', [Validators.min(18), Validators.max(100)]),
+      name: ['', [Validators.required, Validators.minLength(4), forbiddenName('Ivan')]],
+      age: ['', [Validators.min(18), Validators.max(100)]],
       address: this.fb.group({
-        city: this.fb.control(''),
-        street: this.fb.control(''),
+        city: [''],
+        street: [''],
       }),
     });
   }
@@ -63,17 +59,3 @@ export class ReactiveFormsComponent implements OnInit, OnDestroy {
     console.log(this.userForm.value);
   }
 }
-
-// ******** Helpers ********
-// destroy$ = new Subject<void>();
-
-// ngOnInit() {
-//   this.name?.valueChanges
-//     .pipe(takeUntil(this.destroy$))
-//     .subscribe((controlValue) => console.log(controlValue));
-// }
-
-// ngOnDestroy() {
-//   this.destroy$.next();
-//   this.destroy$.complete();
-// }
